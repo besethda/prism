@@ -1,0 +1,24 @@
+{
+  "name": "prism",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/besethda/prism#readme",
+  "bugs": {
+    "url": "https://github.com/besethda/prism/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/besethda/prism.git"
+  },
+  "license": "ISC",
+  "author": "seth",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ejs": "^4.0.1",
+    "express": "^5.2.1"
+  }
+}
