@@ -1,0 +1,28 @@
+{
+  "songs": [
+    {
+     "id": "001",
+     "name": "Call you Baby",
+     "artist": "besethda",
+     "duration": 3000,
+     "artwork": "/images/artwork/call-you-baby.jpg",
+     "file": "/audio/call-you-baby.wav"
+    }, 
+    {
+      "id": "002", 
+      "name": "I Just want your Love",
+      "artist": "besethda",
+      "duration": 3438,
+      "artwork": "/images/artwork/i-just-want-your-love.jpg",
+      "file": "/audio/i-just-want-your-love.wav"
+    }
+  ],
+  "artists": [
+    {
+      "id": "001",
+      "name": "besethda",
+      "description": "besethda is an artist from Virginia.",
+      "songs": ["001", "002"]
+    }
+  ]
+}

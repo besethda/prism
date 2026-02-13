@@ -1,0 +1,20 @@
+<div class="song-display-area">
+  <div class="song-display-title"><%= locals.songDisplay.title ? locals.songDisplay.title : "Title" %></div>
+  <% if(locals.songDisplay.type) { %>
+      <% if(locals.songDisplay.type === "box") { %>
+        <% if(locals.songs) { %>
+            <% locals.songs.forEach(e => { %>
+              <div class="song-box">
+                <div class="img-box">
+                  <img class="song-box-img" src="<%=e.artwork%>" />
+                </div>
+                <div class="song-box-info">
+                  <div class="song-box-name"><%=e.name%></div>
+                  <a class="song-box-artist" href="/artists/<%=e.artist%>"><%=e.artist%></a>
+                </div>
+              </div>
+            <% }) %>
+        <% } %>
+      <% } %>
+  <% } %>
+</div>
