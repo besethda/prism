@@ -13,7 +13,13 @@
       <source src="/videos/lights.mp4" type="video/mp4"/>
     </video>
     <%-include("../partials/header.ejs")%>
-    <%-include("../partials/song-display.ejs")%>
+    <% if(locals.title){ %>
+      <% if(locals.title === "Home") { %>
+        <%-include("../partials/song-display.ejs")%>
+      <% } else { %>
+        <%-include("../partials/upload.ejs")%>
+      <% } %>
+    <% } %>
   </div>
   
 </body>
