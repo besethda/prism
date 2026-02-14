@@ -55,10 +55,10 @@ app.get("/get-user-preferences", (req, res)=> {
   res.json((getDB().userPreferences[0]))
 })
 
-app.post("/adjust-user-settings", (req, res)=> {
-  db = getDB()
+app.post("/adjust-layout", (req, res)=> {
+  let db = getDB()
   db.userPreferences[0].layout = req.body.layout
-  if(writeToDb(DB) = 'saved') {
+  if(writeToDb(db) === 'saved') {
     res.json({message: "saved!"})
   } else {
     res.json({message: "Failed"})
