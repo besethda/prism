@@ -76,11 +76,17 @@ body {
   align-items: center;
   border-radius: 4px;
   background: linear-gradient(47deg, rgba(20, 20, 20, 0.317), rgba(0, 0, 0, 0.572));
+  cursor: pointer;
   display: flex;
   height: 48px;
   margin: 2px 1.5%;
   padding: 1px 20px;
   width: 97%;
+}
+
+.selected-song-list {
+  background: linear-gradient(47deg, rgba(100, 100, 100, 0.317), rgba(84, 84, 84, 0.572));
+  border: solid rgba(255, 255, 255, 0.369) 1px
 }
 
 .img-list {
@@ -119,14 +125,27 @@ body {
   aspect-ratio: 3/4;
 }
 
+.selected-song-box {
+  border-radius: 6px;
+  border: solid rgba(255, 255, 255, 0.369) 1px;
+
+  .song-box-img {
+    transform: scale(.9);
+  }
+}
+
 .img-box {
   aspect-ratio: 1;
+  align-items: center;
+  display: flex;
+  justify-content: center;
   width: 100%;
   overflow-y: hidden;
 }
 
 .song-box-img {
   width: 100%;
+  transition: .4s ease-in-out all;
 }
 
 .song-box-info {

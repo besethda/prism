@@ -1,5 +1,7 @@
 <div class="song-display-area">
-  <div class="song-display-title"><%= locals.songDisplay.title ? locals.songDisplay.title : "Title" %></div>
+  <div class="song-title-container">
+    <div class="song-display-title"><%= locals.songDisplay.title ? locals.songDisplay.title : "Title" %></div>
+
   <% if(locals.songDisplay.type) { %>
       <% let type %>
       <% if(locals.songDisplay.type === "box") { %>
@@ -7,9 +9,14 @@
       <% } else { %>
             <% type = "list" %>
       <% } %>
+      <div class="layout-toggle">
+        <svg class="layout-icon" id="box-icon" viewBox="144 144 512 512" xmlns="http://www.w3.org/2000/svg"><g><path d="m364.73 282.61v82.121h-82.121V282.61h82.121m9.0703-20.152h-100.76c-6.0469.0-10.578 5.0391-10.578 10.578v100.76c0 6.0469 5.0391 10.578 10.578 10.578h100.76c6.0469.0 10.578-5.0391 10.578-10.578v-100.76c.50391-6.043-4.5312-10.578-10.578-10.578z"/><path d="m517.39 282.61v82.121h-82.121V282.61h82.121m9.5703-20.152h-100.76c-6.0469.0-10.578 5.0391-10.578 10.578v100.76c0 6.0469 5.0391 10.578 10.578 10.578h100.76c6.0469.0 10.578-5.0391 10.578-10.578v-100.76c.003906-6.043-4.5312-10.578-10.578-10.578z"/><path d="m364.73 435.27v82.121h-82.121V435.27h82.121m9.0703-20.152h-100.76c-6.0469.0-10.578 5.0391-10.578 10.578v100.76c0 6.0469 5.0391 10.578 10.578 10.578h100.76c6.0469.0 10.578-5.0391 10.578-10.578v-100.76c.50391-5.5391-4.5312-10.578-10.578-10.578z"/><path d="m517.39 435.27v82.121h-82.121V435.27h82.121m9.5703-20.152h-100.76c-6.043.0-11.082 5.0391-11.082 11.082v100.76c0 6.0469 5.0391 10.578 10.578 10.578h100.76c6.0469.0 10.578-5.0391 10.578-10.578V426.2c.50781-6.043-4.0273-11.082-10.074-11.082z"/></g></svg>
+        <svg class="layout-icon" id="list-icon" viewBox="144 144 512 512" xmlns="http://www.w3.org/2000/svg"><g><path d="m272.54 314.86h254.93v28.215H272.54z"/><path d="m272.54 385.89h254.93v28.215H272.54z"/><path d="m272.54 456.43h254.93v28.215H272.54z"/></g></svg>
+      </div>
+    </div>
       <% if(locals.songs) { %>
         <% locals.songs.forEach(e => { %>
-          <div class="song-<%=type%>">
+          <div class="song-<%=type%>" data-song-id="<%=e.id ? e.id : "song"%>">
             <div class="img-<%=type%>">
               <img class="song-<%=type%>-img" src="<%=e.artwork%>" />
             </div>

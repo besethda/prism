@@ -18,9 +18,9 @@ const getDB = () => {
   return db
 }
 
-const getArtists = () => {
-  const db = getDB()
-  return db.songs.map(e => e.artist)
+const writeToDb = (db) => {
+  fs.writeFileSync("./data/index.json", JSON.stringify(db, null, 2))
+  return('saved')
 }
 
 export const getSongs = () => {
@@ -28,23 +28,41 @@ export const getSongs = () => {
   return db.songs.map(e => e)
 }
 
-app.get("/", (req, res) =>{
+const getLayout = () => {
+  const db = getDB()
+  return db.userPreferences[0].layout
+}
+
+app.get("/", (req, res) => {
   res.render('pages/index', {
     title: "Home",
     songs: getSongs(),
     songDisplay: {
       title: "Home",
-      type: "list"
+      type: getLayout()
     }
   })
 })
 
-app.post("/play-song", (req, res)=> {
-  if(req.body.songId) {
-    let songId = getDB().songs.find(e => e.id === req.body.songId)
-  } res.
+app.post("/get-song", (req, res) => {
+  if (req.body.songId) {
+    let songObj = getDB().songs.find(e => e.id === req.body.songId)
+    res.sendFile(path.join(__dirname, songObj.file))
+  }
 })
 
+app.get("/get-user-preferences", (req, res)=> {
+  res.json((getDB().userPreferences[0]))
+})
 
+app.post("/adjust-user-settings", (req, res)=> {
+  db = getDB()
+  db.userPreferences[0].layout = req.body.layout
+  if(writeToDb(DB) = 'saved') {
+    res.json({message: "saved!"})
+  } else {
+    res.json({message: "Failed"})
+  }
+})
 
-app.listen(PORT, ()=> console.log("listening on port " + PORT))
+app.listen(PORT, () => console.log("listening on port " + PORT))

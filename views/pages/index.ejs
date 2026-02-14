@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="/images/prism.png" />
   <link rel="stylesheet" href="/css/styles.css" />
   <script src="/scripts/main.js" type="module"></script>
   <title>Prism | <%= locals.title ? locals.title : "" %></title>
 </head>
 <body>
   <div class="main">
-    <video loop autoplay muted class="background-vid">
+    <!-- <video loop autoplay muted class="background-vid">
       <source src="/videos/lights.mp4" type="video/mp4"/>
-    </video>
+    </video> -->
     <%-include("../partials/header.ejs")%>
     <% if(locals.title){ %>
       <% if(locals.title === "Home") { %>
