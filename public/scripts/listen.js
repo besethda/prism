@@ -18,6 +18,10 @@ const saveLayoutSetting = async (setting) => {
   let message = await makeRequest("/listen/adjust-layout", {layout: setting}, "POST")
 }
 
+const recordListen = async (songID) => {
+  let message = makeRequest(`/listen/record-listen`, {songId: songID}, "POST")
+}
+
 const changeLayout = (target) => {
   const boxIcon = document.querySelector('#box-icon')
   const listIcon = document.querySelector('#list-icon')
@@ -57,6 +61,7 @@ const requestSong = async (id) => {
   })
   currentSound.play()
   currentId = `${id}`
+  recordListen(id)
 }
 
 const playPauseSong = () => {

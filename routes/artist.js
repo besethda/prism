@@ -1,11 +1,12 @@
 import express, { Router } from "express"
 import { getSongs } from "./functions.js"
 
-const uploadRouter = express.Router()
+const artistRouter = express.Router()
 
-uploadRouter.get("/", (req, res) =>{
+artistRouter.get("/", (req, res) =>{
   res.render('pages/index', {
     title: "Artist",
+    page: "Artist",
     songDisplay: {
       title: "Artist",
       type: "list"
@@ -13,4 +14,18 @@ uploadRouter.get("/", (req, res) =>{
   })
 })
 
-export default uploadRouter
+artistRouter.get("/dashboard", (req, res)=> {
+  res.render('pages/index', {
+    title: "Artist",
+    page: "Dashboard"
+  })
+})
+
+artistRouter.get("/upload", (req, res)=> {
+  res.render('pages/index', {
+    title: "Artist",
+    page: "Upload"
+  })
+})
+
+export default artistRouter

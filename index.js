@@ -18,6 +18,7 @@ app.use("/listen", listenRouter)
 app.get("/", (req, res) => {
   res.render('pages/index', {
     title: "Home",
+    page: "Home",
     songDisplay: {
       title: "Home"
     }

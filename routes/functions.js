@@ -20,6 +20,40 @@ export const getSongs = () => {
   return db.songs.map(e => e)
 }
 
+export const getArtist = (artist) => {
+  const db = getDB()
+  let artistObject = db.artists.find(e => e.name.toLowerCase() === artist.toLowerCase())
+  return artistObject
+}
+
+export const getArtistSongs = (artist) => {
+  const db = getDB()
+  let songsList = db.songs.filter(e => e.artist.toLowerCase() === artist.toLowerCase())
+  return songsList
+}
+
+export const getPlaylists = () => {
+  const db = getDB()
+  let playlists = db.playlists.map(e => {
+    let art
+    if (e.songs !== "") {
+      let firstSong = db.songs.find(f => f.id === e.songs[0])
+      art = firstSong.artwork
+    }
+    e.artwork = art
+    return e
+  })
+  return playlists
+}
+
+export const incrementListens = (songID) => {
+  const db = getDB()
+  let currentSong = db.songs.find(e=> e.id === songID)
+  currentSong.listens++
+  writeToDb(db)
+  return "success"
+}
+
 export const getLayout = () => {
   const db = getDB()
   return db.userPreferences[0].layout
