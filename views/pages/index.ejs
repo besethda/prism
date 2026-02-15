@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="/css/styles.css" />
   <script src="/scripts/general.js" type="module"></script>
   <% if (locals.title){ %>
-      <% if (locals.title === "Home") { %>
+      <% if (locals.title === "Options") { %>
         <script src="/scripts/home.js" type="module"></script>
       <% } else if (locals.title === "Listen") { %>
         <script src="/scripts/listen.js" type="module"></script>
@@ -26,8 +26,8 @@
     <% if(locals.title){ %>
       <% if(locals.title === "Listen") { %>
         <%-include("../partials/song-display.ejs")%>
-      <% } else { %>
-        <%-include("../partials/artist-display.ejs")%>
+      <% } else if (locals.title === "Options"){ %>
+        <%-include("../partials/options.ejs")%>
       <% } %>
     <% } %>
   </div>

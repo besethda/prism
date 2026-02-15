@@ -7,7 +7,7 @@ const listenRouter = express.Router()
 listenRouter.get("/", (req, res) => {
   res.render('pages/index', {
     title: "Listen",
-    page: "Listen",
+    page: "All Songs",
     songs: getSongs(),
     songDisplay: {
       title: "Listen",

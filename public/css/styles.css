@@ -59,6 +59,64 @@ body {
   fill: white;
 }
 
+.option-container {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-title {
+  color: white;
+  display: flex;
+  justify-content: center;
+  font-size: 1.6rem;
+  width: 100%;
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20vh;
+  height: 30vh;
+  width: 70%;
+}
+
+.divider {
+  width: 2px;
+  height: 25vh;
+  background-color: rgba(255, 255, 255, 0.513);
+  margin: 0 1%;
+}
+
+.single-option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  width: 49%;
+  height: 100%;
+  box-shadow: -2px -2px 10px 2px rgba(255, 255, 255, 0.5);
+}
+
+.left {
+  border-radius: 80px 12px 12px 80px;
+  background: linear-gradient(36deg, rgba(113, 0, 165, 0.902), rgb(1, 1, 129));
+}
+
+.right {
+  border-radius: 12px 80px 80px 12px;
+  background: linear-gradient(36deg, rgb(1, 1, 129), rgb(170, 0, 200));
+}
+
+.option-label{
+  color: white;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
 .song-display-area {
   display: flex;
   flex-wrap: wrap;
@@ -109,6 +167,14 @@ body {
 
 .active {
   fill: purple;
+}
+
+.artist-description {
+  color: white;
+  font-size: 1.2rem;
+  padding: 18px 8%;
+  margin-bottom: 30px;
+  width: 100%;
 }
 
 .song {

@@ -1,0 +1,14 @@
+<% if( locals.options ) { %>
+  <div class="option-container">
+    <div class="page-title">Please Choose an option:</div>
+    <div class="options">
+      <a class="single-option left" href="<%= locals.options ? locals.options[0].path : "/" %>">
+        <div class="option-label"><%= locals.options ? locals.options[0].name.toUpperCase() : "option 1" %></div>
+      </a>
+      <div class="divider"></div>
+      <a class="single-option right" href="<%= locals.options ? locals.options[1].path : "/" %>">
+        <div class="option-label"><%= locals.options ? locals.options[1].name.toUpperCase() : "option 1" %></div>
+      </a>
+    </div>
+  </div>
+<% } else %>
