@@ -1,13 +1,13 @@
 import express, { Router } from "express"
-import { getSongs } from "../index.js"
+import { getSongs } from "./functions.js"
 
 const uploadRouter = express.Router()
 
 uploadRouter.get("/", (req, res) =>{
   res.render('pages/index', {
-    title: "Upload",
+    title: "Artist",
     songDisplay: {
-      title: "Home",
+      title: "Artist",
       type: "list"
     }
   })

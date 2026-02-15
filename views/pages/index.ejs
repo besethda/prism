@@ -5,7 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="/images/prism.png" />
   <link rel="stylesheet" href="/css/styles.css" />
-  <script src="/scripts/main.js" type="module"></script>
+  <script src="/scripts/general.js" type="module"></script>
+  <% if (locals.title){ %>
+      <% if (locals.title === "Home") { %>
+        <script src="/scripts/home.js" type="module"></script>
+      <% } else if (locals.title === "Listen") { %>
+        <script src="/scripts/listen.js" type="module"></script>
+      <% } else if (locals.title === "Upload") { %>
+        <script src="/scripts/artist.js" type="module"></script>
+      <% } %>
+  <% } %>
   <title>Prism | <%= locals.title ? locals.title : "" %></title>
 </head>
 <body>
@@ -15,10 +24,10 @@
     </video> -->
     <%-include("../partials/header.ejs")%>
     <% if(locals.title){ %>
-      <% if(locals.title === "Home") { %>
+      <% if(locals.title === "Listen") { %>
         <%-include("../partials/song-display.ejs")%>
       <% } else { %>
-        <%-include("../partials/upload.ejs")%>
+        <%-include("../partials/artist-display.ejs")%>
       <% } %>
     <% } %>
   </div>
