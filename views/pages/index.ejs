@@ -28,7 +28,9 @@
         <%-include("../partials/song-display.ejs")%>
       <% } else if (locals.title === "Options"){ %>
         <%-include("../partials/options.ejs")%>
-      <% } %>
+       <% } else if (locals.title === "Upload"){ %>
+        <%-include("../partials/upload.ejs")%>
+        <% } %>
     <% } %>
   </div>
   

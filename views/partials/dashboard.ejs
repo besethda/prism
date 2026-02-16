@@ -1,0 +1,12 @@
+<div class="dashboard-container">
+  <% if(locals.analytics) { %>
+    <% locals.analytics.forEach((e, i)=> { %>
+      <% if(locals.analytics[0]) { %>
+        <div class="dashboard-option">
+          <div class="dashboard-option-title"><%= locals.analytics[i].title ?  locals.analytics[i].title : "Error getting data" %></div>
+          <div class="dashboard-option-value"><%= locals.analytics[i].title ?  locals.analytics[i].value : "Error getting data" %></div>
+        </div>
+        <% } %>
+    <% }) %>
+  <% } %>
+</div>

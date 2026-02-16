@@ -54,6 +54,18 @@ export const incrementListens = (songID) => {
   return "success"
 }
 
+const findTopSong = (artist) => {
+}
+
+export const getAnalytics = (artists) => {
+  let songsList = getArtistSongs(artist)
+  songsList.reduce()
+  const analytics = {
+    songNumber: songsList.length,
+
+  }
+}
+
 export const getLayout = () => {
   const db = getDB()
   return db.userPreferences[0].layout
