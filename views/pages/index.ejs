@@ -12,7 +12,7 @@
       <% } else if (locals.title === "Listen") { %>
         <script src="/scripts/listen.js" type="module"></script>
       <% } else if (locals.title === "Upload") { %>
-        <script src="/scripts/artist.js" type="module"></script>
+        <script src="/scripts/upload.js" type="module"></script>
       <% } %>
   <% } %>
   <title>Prism | <%= locals.page ? locals.page : "" %></title>
@@ -30,7 +30,9 @@
         <%-include("../partials/options.ejs")%>
        <% } else if (locals.title === "Upload"){ %>
         <%-include("../partials/upload.ejs")%>
-        <% } %>
+        <% } else if (locals.title === "Dashboard"){ %>
+          <%-include("../partials/dashboard.ejs")%>
+          <% } %>
     <% } %>
   </div>
   

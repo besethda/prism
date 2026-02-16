@@ -1,5 +1,5 @@
 import express, { Router } from "express"
-import { getSongs } from "./functions.js"
+import { getDB, getSongs, getAnalytics } from "./functions.js"
 
 const artistRouter = express.Router()
 
@@ -19,10 +19,17 @@ artistRouter.get("/", (req, res) => {
 
 artistRouter.get("/dashboard", (req, res) => {
   res.render('pages/index', {
-    title: "Artist",
+    title: "Dashboard",
     page: "Dashboard",
-    analytics: "none"
+    analytics: getAnalytics('besethda')
   })
+})
+
+
+artistRouter.post("/upload-song", (req, res) => {
+  let db = getDB()
+  console.log(req.body)
+  res.json({message: "connected"})
 })
 
 artistRouter.get("/upload", (req, res) => {

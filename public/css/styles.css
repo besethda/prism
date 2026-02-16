@@ -352,9 +352,42 @@ input[type=file]::file-selector-button:hover {
   margin-top: 12px;
   padding: 4px;
   cursor: pointer;
+  transition: .2s all ease-in-out;
 }
 
 .submit-upload:hover {
   color: black;
   background: white;
+}
+
+.dashboard-container {
+  display: flex;
+  flex-wrap: wrap;
+  color: white;
+}
+
+.dashboard-option {
+  width: 42%;
+  margin: 4%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 8px;
+  border: solid white 1px;
+  border-radius: 4px;
+
+  div {
+    text-align: center;
+  }
+}
+
+.dashboard-option-title {
+  font-size: 1.8rem;
+  width: 100%;
+}
+
+.dashboard-option-value {
+  font-size: 1.6rem;
+  width: 100%;
 }

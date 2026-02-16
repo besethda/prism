@@ -54,17 +54,36 @@ export const incrementListens = (songID) => {
   return "success"
 }
 
-const findTopSong = (artist) => {
+const songInPlaylists = (songId, acc) => {
+  const db = getDB()
+  let songNumber = acc
+  db.playlists.forEach(playlist => {
+    if(playlist.songs.includes(songId)) songNumber++
+  });
+  return songNumber
 }
 
-export const getAnalytics = (artists) => {
+export const getAnalytics = (artist) => {
   let songsList = getArtistSongs(artist)
-  songsList.reduce()
+  let mostListens = songsList.reduce((acc, e)=> {
+    e.listens > acc ? acc = e.listens : acc = acc
+    return acc}, 0)
+  let allListens = songsList.reduce((acc, e)=> {
+    acc = e.listens + acc
+    return acc}, 0)
+  let songsInPlaylists = songsList.reduce((acc, e)=> {
+    acc = songInPlaylists(e.id, acc)
+    return acc}, 0)
   const analytics = {
     songNumber: songsList.length,
-
+    highestSong: mostListens,
+    totalListens: allListens,
+    playlistSongs: songsInPlaylists
   }
+  return analytics
 }
+
+getAnalytics('besethda')
 
 export const getLayout = () => {
   const db = getDB()

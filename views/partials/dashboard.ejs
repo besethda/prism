@@ -1,12 +1,20 @@
 <div class="dashboard-container">
   <% if(locals.analytics) { %>
-    <% locals.analytics.forEach((e, i)=> { %>
-      <% if(locals.analytics[0]) { %>
         <div class="dashboard-option">
-          <div class="dashboard-option-title"><%= locals.analytics[i].title ?  locals.analytics[i].title : "Error getting data" %></div>
-          <div class="dashboard-option-value"><%= locals.analytics[i].title ?  locals.analytics[i].value : "Error getting data" %></div>
+          <div class="dashboard-option-title">Number of Songs:</div>
+          <div class="dashboard-option-value"><%= locals.analytics.songNumber ?  locals.analytics.songNumber : "Error getting data" %></div>
+        </div>
+        <div class="dashboard-option">
+          <div class="dashboard-option-title">Top Song:</div>
+          <div class="dashboard-option-value"><%= locals.analytics.highestSong ?  locals.analytics.highestSong : "Error getting data" %></div>
+        </div>
+        <div class="dashboard-option">
+          <div class="dashboard-option-title">Total Listens:</div>
+          <div class="dashboard-option-value"><%= locals.analytics.totalListens ?  locals.analytics.totalListens : "Error getting data" %></div>
+        </div>
+        <div class="dashboard-option">
+          <div class="dashboard-option-title">Total songs in playlists:</div>
+          <div class="dashboard-option-value"><%= locals.analytics.playlistSongs ?  locals.analytics.playlistSongs : "Error getting data" %></div>
         </div>
         <% } %>
-    <% }) %>
-  <% } %>
 </div>
