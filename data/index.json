@@ -2,12 +2,12 @@
   "songs": [
     {
       "id": "001",
-      "name": "Call you Baby",
+      "name": "Dystopia",
       "artist": "besethda",
       "duration": 3000,
       "artwork": "/images/artwork/call-you-baby.jpg",
-      "file": "/public/audio/call-you-baby.wav",
-      "listens": 0
+      "file": "/public/audio/Dystopia.wav",
+      "listens": 101
     },
     {
       "id": "002",
@@ -16,7 +16,34 @@
       "duration": 3438,
       "artwork": "/images/artwork/i-just-want-your-love.jpg",
       "file": "/public/audio/I just want your love.wav",
-      "listens": 10
+      "listens": 3809
+    },
+    {
+      "id": "003",
+      "name": "I Just wanna Dance",
+      "artist": "besethda",
+      "duration": 3000,
+      "artwork": "/images/artwork/call-you-baby.jpg",
+      "file": "/public/audio/I Just wanna Dance.wav",
+      "listens": 2409
+    },
+    {
+      "id": "004",
+      "name": "Girl Next Door",
+      "artist": "besethda",
+      "duration": 3000,
+      "artwork": "/images/artwork/i-just-want-your-love.jpg",
+      "file": "/public/audio/Girl Next door.wav",
+      "listens": 2405
+    },
+    {
+      "id": "006",
+      "name": "Raindance",
+      "artist": "besethda",
+      "duration": 3000,
+      "artwork": "/images/artwork/i-just-want-your-love.jpg",
+      "file": "/public/audio/raindance'.wav",
+      "listens": 390984
     }
   ],
   "artists": [
@@ -33,11 +60,19 @@
         "001",
         "002"
       ]
+    },
+    {
+      "id": "002",
+      "name": "Seths Playlist",
+      "songs": [
+        "004",
+        "006"
+      ]
     }
   ],
   "userPreferences": [
     {
-      "layout": "list"
+      "layout": "box"
     }
   ]
 }

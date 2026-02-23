@@ -1,7 +1,12 @@
 <div class="song-display-area">
   <div class="song-title-container">
-    <div class="song-display-title"><%= locals.songDisplay.title ? locals.songDisplay.title : "Title" %></div>
-
+    <% if (locals.songDisplay.title){ %>
+      <div class="listen-options">
+        <a class="song-display-title <%= locals.songDisplay.title=== "Listen" ? "active-title" : "" %>" href="<%= locals.songDisplay.title=== "Listen" ? "" : "/listen" %>">Listen</a>
+        <span> / </span>
+        <a class="song-display-title <%= locals.songDisplay.title=== "Playlist" ? "active-title" : "" %>" href="<%= locals.songDisplay.title=== "Playlist" ? "" : "/listen/playlists" %>">Playlists</a>  
+      </div>
+      <% } %>
   <% if(locals.songDisplay.type) { %>
       <% let type %>
       <% if(locals.songDisplay.type === "box") { %>
@@ -16,7 +21,14 @@
       </div>
     </div>
     <% if (locals.artistDisplay) { %>
+      <div class="artist-title"><%= locals.artistDisplay.name ? locals.artistDisplay.name : "Artist Name." %></div>
       <div class="artist-description"><%= locals.artistDisplay.description ? locals.artistDisplay.description : "This is an artist." %></div>
+    <% } %>
+    <% if (locals.playlists) { %>
+      <%-include("./playlists.ejs")%>
+    <% } %>
+    <% if (locals.playlist && locals.playlist.name) { %>
+      <div class="playlist-name"><%= locals.playlist.name%></div>
     <% } %>
       <% if(locals.songs) { %>
         <% locals.songs.forEach(e => { %>
@@ -33,5 +45,3 @@
     <% } %>
   <% } %>
 </div>
-
-<%-include("./player.ejs")%>

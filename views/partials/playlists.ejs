@@ -1,0 +1,16 @@
+<% if (locals.playlists) { %>
+  <div class="playlist-div">
+    <div class="playlist-container">
+      <% if(locals.playlists) { %>
+          <% locals.playlists.forEach(e => { %>
+            <a class="playlist" data-id= "<%=e.id? `${e.id}` : 'id' %>" href="<%=`/listen/single-playlist?id=${e.id}`%>">
+              <div class="playlist-photo-container">
+                <img class="playlist-image" src="<%=e.artwork ? e.artwork : 'error'%>" />
+              </div> 
+              <div class="playlist-title"><%= e.name ? e.name : 'Playlist'%></div>
+            </a>
+          <% }) %>
+      <% } %>
+    </div>
+  </div>
+<% } %>
