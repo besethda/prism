@@ -16,7 +16,7 @@
       "duration": 3438,
       "artwork": "/images/artwork/i-just-want-your-love.jpg",
       "file": "/public/audio/I just want your love.wav",
-      "listens": 9
+      "listens": 10
     }
   ],
   "artists": [
@@ -37,7 +37,7 @@
   ],
   "userPreferences": [
     {
-      "layout": "box"
+      "layout": "list"
     }
   ]
 }

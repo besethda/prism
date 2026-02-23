@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 html,
@@ -21,7 +21,7 @@ body {
   position: fixed;
   height: 100%;
   z-index: -10;
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .header {
@@ -56,7 +56,9 @@ body {
 }
 
 .nav-icon {
+  stroke: white;
   fill: white;
+  stroke-width: 2px;
 }
 
 .option-container {
@@ -111,7 +113,7 @@ body {
   background: linear-gradient(36deg, rgb(1, 1, 129), rgb(170, 0, 200));
 }
 
-.option-label{
+.option-label {
   color: white;
   text-align: center;
   font-size: 1.8rem;
@@ -133,7 +135,7 @@ body {
 .song-display-title {
   font-size: 2rem;
   color: white;
-  margin-bottom: 20px;;
+  margin-bottom: 20px;
 }
 
 .layout-toggle {
@@ -186,16 +188,24 @@ body {
 .list {
   align-items: center;
   border-radius: 4px;
-  background: linear-gradient(47deg, rgba(20, 20, 20, 0.317), rgba(0, 0, 0, 0.572));
+  background: linear-gradient(
+    47deg,
+    rgba(20, 20, 20, 0.317),
+    rgba(0, 0, 0, 0.572)
+  );
   height: 48px;
   margin: 4px 1.5%;
   padding: 1px 20px;
   width: 97%;
 }
 
-.selected-song.list{
-  background: linear-gradient(47deg, rgba(100, 100, 100, 0.317), rgba(84, 84, 84, 0.572));
-  border: solid rgba(255, 255, 255, 0.369) 1px
+.selected-song.list {
+  background: linear-gradient(
+    47deg,
+    rgba(100, 100, 100, 0.317),
+    rgba(84, 84, 84, 0.572)
+  );
+  border: solid rgba(255, 255, 255, 0.369) 1px;
 }
 
 .list .img {
@@ -238,7 +248,7 @@ body {
 }
 
 .selected-song.box .img .song-img {
-  transform: scale(.9);
+  transform: scale(0.9);
 }
 
 .box .img {
@@ -252,7 +262,7 @@ body {
 
 .box .img .song-img {
   width: 100%;
-  transition: .4s ease-in-out all;
+  transition: 0.4s ease-in-out all;
 }
 
 .box .song-info {
@@ -327,7 +337,7 @@ body {
   text-align: right;
 }
 
-input[type=file]::file-selector-button{
+input[type="file"]::file-selector-button {
   background: transparent;
   font-size: 1.3rem;
   margin: 3px 0;
@@ -335,10 +345,10 @@ input[type=file]::file-selector-button{
   cursor: pointer;
   border: none;
   text-decoration: double;
-  transition:.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
 }
 
-input[type=file]::file-selector-button:hover {
+input[type="file"]::file-selector-button:hover {
   background: white;
   color: black;
 }
@@ -352,7 +362,7 @@ input[type=file]::file-selector-button:hover {
   margin-top: 12px;
   padding: 4px;
   cursor: pointer;
-  transition: .2s all ease-in-out;
+  transition: 0.2s all ease-in-out;
 }
 
 .submit-upload:hover {
@@ -391,3 +401,63 @@ input[type=file]::file-selector-button:hover {
   font-size: 1.6rem;
   width: 100%;
 }
+
+.player-area {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 110px;
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+}
+
+.player-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 80%;
+  margin-bottom: 10%;
+  width: 80%;
+  min-width: 200px;
+  background: linear-gradient(37deg, rgba(35, 35, 35, rgba(0, 0, 0, 0.805)), black);
+  border: 1px solid rgba(255, 255, 255, 0.188);
+  border-radius: 50px;
+}
+
+.progress-bar {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  height: 1px;
+  width: 85%;
+  background-color: rgba(255, 255, 255, 0.819);
+}
+
+.progress {
+  height: 2px;
+  width: 10px;
+  max-width: 99%;
+  background: linear-gradient(36deg, purple, rgb(43, 0, 128));
+}
+
+.progress-head {
+  width: .7%;
+  height: 15px;
+  background: rgb(128, 0, 156);
+  border-radius: 50px;
+}
+
+.song-info {
+  height: 60px;
+  width: 100%;
+  padding: 0 8%;
+  display: grid;
+  grid-template-areas: 60px fit-content 1fr 100px;
+  color: white;
+}
+
+.album-art {
+  height: 32px;
+}
+
