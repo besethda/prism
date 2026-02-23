@@ -1,6 +1,6 @@
 import express from "express"
 import * as path from "path"
-import { getDB, getSongs, getArtist, getArtistSongs, getPlaylists, incrementListens, writeToDb, getLayout, __dirname } from "./functions.js"
+import { getDB, getSongs, getArtist, getArtistSongs, getPlaylists, incrementListens, writeToDb, getLayout, getSinglePlaylist, __dirname } from "./functions.js"
 
 const listenRouter = express.Router()
 
@@ -36,6 +36,21 @@ listenRouter.get("/playlists", (req, res) => {
     playlists: getPlaylists(),
     songDisplay: {
       title: "Playlist",
+      type: getLayout()
+    }
+  })
+})
+
+listenRouter.get("/single-playlist", (req, res) => {
+  let currentPlaylist = getSinglePlaylist(req.query.id)
+  console.log(currentPlaylist.name)
+  res.render('pages/index', {
+    title: "Listen",
+    page: currentPlaylist.name,
+    songs: currentPlaylist.songs,
+    playlist: currentPlaylist,
+    songDisplay: {
+      title: currentPlaylist.name,
       type: getLayout()
     }
   })

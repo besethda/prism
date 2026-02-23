@@ -46,6 +46,18 @@ export const getPlaylists = () => {
   return playlists
 }
 
+export const getSinglePlaylist = (id) => {
+  const db = getDB()
+  let playlist = db.playlists.find(e=> e.id === id)
+  let songObjects = playlist.songs.map(e => {
+    let song = db.songs.find(f => f.id === e)
+    return song
+  })
+  playlist.songs = songObjects
+  console.log(playlist)
+  return playlist
+}
+
 export const incrementListens = (songID) => {
   const db = getDB()
   let currentSong = db.songs.find(e=> e.id === songID)
@@ -82,8 +94,6 @@ export const getAnalytics = (artist) => {
   }
   return analytics
 }
-
-getAnalytics('besethda')
 
 export const getLayout = () => {
   const db = getDB()
